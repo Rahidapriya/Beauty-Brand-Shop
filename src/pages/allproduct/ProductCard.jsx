@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
+
 
 const ProductCard = ({product}) => {
-    const { selectedOption, name, price, rating, desp, photo }=product;
+    const {_id, selectedOption, name, price, rating, desp, photo }=product;
     return (
         <div>
              <div className="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
@@ -30,7 +32,7 @@ const ProductCard = ({product}) => {
     <p className="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
       {desp}
     </p>
-    <a className="inline-block" href="#">
+    <div className="inline-block">
       {/* <button
         className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-pink-500 uppercase align-middle transition-all rounded-lg select-none hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
         type="button"
@@ -52,9 +54,9 @@ const ProductCard = ({product}) => {
           ></path>
         </svg>
       </button> */}
-     <div > <button className="btn mx-5 ">Details</button>
-      <button className="btn mx-5 ">Update</button></div>
-    </a>
+      <button className="btn mx-5 ">Details</button>
+      <Link to={`updateproduct/${_id}`}><button className="btn mx-5 ">Update</button></Link>
+    </div>
   </div>
 </div>
         </div>

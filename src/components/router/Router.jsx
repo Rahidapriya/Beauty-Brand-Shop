@@ -18,6 +18,7 @@ import Register from "../../pages/register/Register";
 import ErrorPage from "../../pages/errorpage/ErrorPage"
 import AddProduct from "../../pages/addproduct/AddProduct";
 import AllProduct from "../../pages/allproduct/AllProduct";
+import UpdateProduct from "../../pages/updateProduct/UpdateProduct";
 // import ErrorPage from "../../pages/errorPage/ErrorPage";
 
   const router = createBrowserRouter([
@@ -36,12 +37,18 @@ import AllProduct from "../../pages/allproduct/AllProduct";
             path:"/addproduct",
             element:<AddProduct></AddProduct>
           },
+          
        
        {
         path:'/allproduct',
         element:<AllProduct></AllProduct>,
         loader:()=>fetch('http://localhost:5003/products')
        },
+       {
+        path:'/allproduct/updateproduct/:id',
+        element:<UpdateProduct></UpdateProduct>,
+        loader:({params})=>fetch(`http://localhost:5003/products/${params.id}`)
+      },
         
         {
           path:"/login",
