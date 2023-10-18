@@ -1,6 +1,7 @@
 import {  useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import Navbar from "../../shared/navbar/Navbar";
 
 
 const UpdateProduct = () => {
@@ -56,6 +57,7 @@ const [upselectedOption, upsetSelectedOption] = useState(product.selectedOption)
     return (
         // <div>update</div>
         <div>
+            <Navbar></Navbar>
            <div>
 
 
