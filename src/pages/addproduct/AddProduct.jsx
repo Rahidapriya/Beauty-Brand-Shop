@@ -26,7 +26,7 @@ const AddProduct = () => {
   console.log(newProduct);
 
    
-    fetch('http://localhost:5003/products',{
+    fetch('http://localhost:5003/addtocart',{
         method:'POST',
         headers:{
             'content-type':'application/json'

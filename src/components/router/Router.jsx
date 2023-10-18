@@ -19,6 +19,7 @@ import ErrorPage from "../../pages/errorpage/ErrorPage"
 import AddProduct from "../../pages/addproduct/AddProduct";
 import AllProduct from "../../pages/allproduct/AllProduct";
 import UpdateProduct from "../../pages/updateProduct/UpdateProduct";
+import DetailsProduct from "../../pages/detailsProduct/DetailsProduct";
 // import ErrorPage from "../../pages/errorPage/ErrorPage";
 
   const router = createBrowserRouter([
@@ -47,6 +48,11 @@ import UpdateProduct from "../../pages/updateProduct/UpdateProduct";
        {
         path:'/allproduct/updateproduct/:id',
         element:<UpdateProduct></UpdateProduct>,
+        loader:({params})=>fetch(`http://localhost:5003/addtocart/${params.id}`)
+      },
+      {
+        path:'/allproduct/detailsproduct/:id',
+        element:<DetailsProduct></DetailsProduct>,
         loader:({params})=>fetch(`http://localhost:5003/products/${params.id}`)
       },
         
