@@ -7,7 +7,11 @@ import Navbar from "../../shared/navbar/Navbar";
 const UpdateProduct = () => {
    
     const product=useLoaderData();
-const { _id,selectedOption, name, price, rating, desp, photo }=product;
+const { _id,selectedOption,brand_name, name, price, rating, desp, photo }=product;
+const [brandselectedOption, setBrandSelectedOption] = useState(product.brand_name);
+    const  handleBrandRadioChange = (e) => {
+      setBrandSelectedOption(e.target.value);
+    };
 const [upselectedOption, upsetSelectedOption] = useState(product.selectedOption);
     const handleRadioChange = (e) => {
       upsetSelectedOption(e.target.value);
@@ -22,7 +26,7 @@ const [upselectedOption, upsetSelectedOption] = useState(product.selectedOption)
     const rating = form.rating.value;
     const desp = form.desp.value;
   
-    const updatedProduct = { selectedOption, name, price, rating, desp, photo };
+    const updatedProduct = { selectedOption,brand_name, name, price, rating, desp, photo };
     console.log(updatedProduct);
   
      
@@ -108,6 +112,125 @@ min="0"
 className="w-full appearance-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
 />
 </div>
+
+{/*  */}
+<div className="mb-5">
+        <label className="mb-3 block text-base font-medium text-[#07074D]">
+          Brand Name
+        </label>
+        <div className=" items-center  mt-6 block ">
+        <div className="flex items-center">
+            <input
+              type="radio"
+              name="radiobrand"
+              id="radiobrand1"
+              value="Chanel"
+              defaultChecked={brandselectedOption === 'Chanel'}
+        onChange={ handleBrandRadioChange }
+              className="h-5 w-5"
+            />
+            <label
+              // for="radioButton1"
+              className="pl-3 text-base font-medium text-[#07074D]"
+            >
+           Chanel
+            </label>
+          </div>
+          <div className="flex items-center">
+            <input
+              type="radio"
+              name="radiobrand"
+              id="radiobrand2"
+              value="Dior"
+              defaultChecked={brandselectedOption === 'Dior'}
+              onChange={handleBrandRadioChange}
+              className="h-5 w-5"
+            />
+            <label
+              // for="radioButton2"
+              className="pl-3 text-base font-medium text-[#07074D]"
+            >
+          Dior
+            </label>
+          </div>
+
+          {/*  */}
+          <div className="flex items-center">
+            <input
+              type="radio"
+              name="radiobrand"
+              id="radiobrand3"
+              value="Estee Lauder"
+              defaultChecked={brandselectedOption === 'Estee Lauder'}
+              onChange={handleBrandRadioChange}
+              className="h-5 w-5"
+            />
+            <label
+              // for="radioButton3"
+              className="pl-3 text-base font-medium text-[#07074D]"
+            >
+          Estee Lauder
+            </label>
+          </div>
+         
+          {/*  */}
+
+          <div className="flex items-center">
+            <input
+              type="radio"
+              name="radiobrand"
+              id="radiobrand4"
+              value="L'Oreal"
+              defaultChecked={brandselectedOption === "L'Oreal"}
+              onChange={handleBrandRadioChange}
+              className="h-5 w-5"
+            />
+            <label
+              // for="radioButton4"
+              className="pl-3 text-base font-medium text-[#07074D]"
+            >
+          L'Oreal
+            </label>
+          </div>
+          <div className="flex items-center">
+            <input
+              type="radio"
+              name="radiobrand"
+              id="radiobrand5"
+              value="Revlon"
+              defaultChecked={brandselectedOption === 'Revlon'}
+              onChange={handleBrandRadioChange}
+              className="h-5 w-5"
+            />
+            <label
+              // for="radioButton5"
+              className="pl-3 text-base font-medium text-[#07074D]"
+            >
+            Revlon
+            </label>
+          </div>
+
+          <div className="flex items-center">
+            <input
+              type="radio"
+              name="radiobrand"
+              id="radiobrand6"
+              value="Urban Decay"
+              defaultChecked={brandselectedOption === 'Urban Decay'}
+              onChange={handleBrandRadioChange}
+              className="h-5 w-5"
+            />
+            <label
+              // for="radioButton6"
+              className="pl-3 text-base font-medium text-[#07074D]"
+            >
+             Urban Decay
+            </label>
+          </div>
+
+        </div>
+      </div>
+{/* e */}
 <div className="mb-5">
 <label className="mb-3 block text-base font-medium text-[#07074D]">
 Which type of product you want to add?
@@ -292,41 +415,6 @@ className="w-full appearance-none rounded-md border border-[#e0e0e0] bg-white py
 </div>
 
 
-{/* <div className="-mx-3 flex flex-wrap">
-<p className='mb-3 block text-base font-medium text-[#07074D] ml-3'>What time would you prefer for a meeting with us?</p>
-<div className="w-full px-3 sm:w-1/2">
-<div className="mb-5">
-<label
-  for="date"
-  className="mb-3 block text-base font-medium text-[#07074D]"
->
-  Date
-</label>
-<input
-  type="date"
-  name="date"
-  id="date"
-  className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-/>
-</div>
-</div>
-<div className="w-full px-3 sm:w-1/2">
-<div className="mb-5">
-<label
-  for="time"
-  className="mb-3 block text-base font-medium text-[#07074D]"
->
-  Time
-</label>
-<input
-  type="time"
-  name="time"
-  id="time"
-  className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-/>
-</div>
-</div>
-</div> */}
 
 
 

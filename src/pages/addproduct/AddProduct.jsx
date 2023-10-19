@@ -12,6 +12,11 @@ const AddProduct = () => {
   const handleRadioChange = (e) => {
     setSelectedOption(e.target.value);
   };
+
+  const [brand_name , setBrand_name] = useState('');
+  const handleBrandRadioChange = (e) => {
+    setBrand_name(e.target.value);
+  };
   const handleAddProduct=event=>{
     // const type = selectedOption;
     event.preventDefault()
@@ -22,11 +27,12 @@ const AddProduct = () => {
   const rating = form.rating.value;
   const desp = form.desp.value;
 
-  const newProduct = { selectedOption, name, price, rating, desp, photo };
+  const newProduct = { selectedOption,brand_name
+    , name, price, rating, desp, photo };
   console.log(newProduct);
 
    
-    fetch('http://localhost:5003/addtocart',{
+    fetch('http://localhost:5003/products',{
         method:'POST',
         headers:{
             'content-type':'application/json'
@@ -108,6 +114,124 @@ const AddProduct = () => {
           className="w-full appearance-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
         />
       </div>
+      {/*  */}
+      <div className="mb-5">
+        <label className="mb-3 block text-base font-medium text-[#07074D]">
+          Brand Name
+        </label>
+        <div className=" items-center  mt-6 block ">
+        <div className="flex items-center">
+            <input
+              type="radio"
+              name="radiobrand"
+              id="radiobrand1"
+              value="Chanel"
+        checked={brand_name === 'Chanel'}
+        onChange={ handleBrandRadioChange }
+              className="h-5 w-5"
+            />
+            <label
+              // for="radioButton1"
+              className="pl-3 text-base font-medium text-[#07074D]"
+            >
+           Chanel
+            </label>
+          </div>
+          <div className="flex items-center">
+            <input
+              type="radio"
+              name="radiobrand"
+              id="radiobrand2"
+              value="Dior"
+              checked={brand_name === 'Dior'}
+              onChange={handleBrandRadioChange}
+              className="h-5 w-5"
+            />
+            <label
+              // for="radioButton2"
+              className="pl-3 text-base font-medium text-[#07074D]"
+            >
+          Dior
+            </label>
+          </div>
+
+          {/*  */}
+          <div className="flex items-center">
+            <input
+              type="radio"
+              name="radiobrand"
+              id="radiobrand3"
+              value="Estee Lauder"
+              checked={brand_name === 'Estee Lauder'}
+              onChange={handleBrandRadioChange}
+              className="h-5 w-5"
+            />
+            <label
+              // for="radioButton3"
+              className="pl-3 text-base font-medium text-[#07074D]"
+            >
+          Estee Lauder
+            </label>
+          </div>
+         
+          {/*  */}
+
+          <div className="flex items-center">
+            <input
+              type="radio"
+              name="radiobrand"
+              id="radiobrand4"
+              value="L'Oreal"
+              checked={brand_name === "L'Oreal"}
+              onChange={handleBrandRadioChange}
+              className="h-5 w-5"
+            />
+            <label
+              // for="radioButton4"
+              className="pl-3 text-base font-medium text-[#07074D]"
+            >
+          L'Oreal
+            </label>
+          </div>
+          <div className="flex items-center">
+            <input
+              type="radio"
+              name="radiobrand"
+              id="radiobrand5"
+              value="Revlon"
+              checked={brand_name === 'Revlon'}
+              onChange={handleBrandRadioChange}
+              className="h-5 w-5"
+            />
+            <label
+              // for="radioButton5"
+              className="pl-3 text-base font-medium text-[#07074D]"
+            >
+            Revlon
+            </label>
+          </div>
+
+          <div className="flex items-center">
+            <input
+              type="radio"
+              name="radiobrand"
+              id="radiobrand6"
+              value="Urban Decay"
+              checked={brand_name === 'Urban Decay'}
+              onChange={handleBrandRadioChange}
+              className="h-5 w-5"
+            />
+            <label
+              // for="radioButton6"
+              className="pl-3 text-base font-medium text-[#07074D]"
+            >
+             Urban Decay
+            </label>
+          </div>
+
+        </div>
+      </div>
+      {/*  */}
       <div className="mb-5">
         <label className="mb-3 block text-base font-medium text-[#07074D]">
           Which type of product you want to add?

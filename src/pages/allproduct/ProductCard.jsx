@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 
 
 const ProductCard = ({product}) => {
-    const {_id, selectedOption, name, price, rating, desp, photo }=product;
+    const {_id, selectedOption,brand_name, name, price, rating, desp, photo }=product;
+    // const brandProductsURL = `/allproduct/${encodeURIComponent(brand_name)}`;
     return (
-        <div>
+      <div>
+      
              <div className="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
   <div className="relative w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
     <img
@@ -21,8 +23,11 @@ const ProductCard = ({product}) => {
      Product Name:{name}
     </h6>
     <h4 className="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-     Type: {selectedOption}
+     Brand: {brand_name}
     </h4>
+    <p className="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+      {selectedOption}
+    </p>
     <p className="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
       Price:{price}
     </p>

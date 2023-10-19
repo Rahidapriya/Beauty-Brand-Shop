@@ -4,11 +4,11 @@ import Swal from 'sweetalert2';
 
 const DetailsProduct = () => {
     const details=useLoaderData();
-    const {_id, selectedOption, name, price, rating, desp, photo }=details;
+    const {_id, selectedOption,brand_name, name, price, rating, desp, photo }=details;
 
     // backend
     const handleAddToCart=()=>{
-    const addtocart = { selectedOption, name, price, rating, desp, photo };
+    const addtocart = { selectedOption,brand_name, name, price, rating, desp, photo };
   console.log(addtocart);
 
    
