@@ -1,14 +1,17 @@
 import { useLoaderData } from 'react-router-dom';
 import cart from '../../assets/attocart.png'
 import Swal from 'sweetalert2';
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const DetailsProduct = () => {
     const details=useLoaderData();
+    const {user}=useContext(AuthContext);
     const {_id, selectedOption,brand_name, name, price, rating, desp, photo }=details;
 
     // backend
     const handleAddToCart=()=>{
-    const addtocart = { selectedOption,brand_name, name, price, rating, desp, photo };
+    const addtocart = { userEmail:user.email,selectedOption,brand_name, name, price, rating, desp, photo };
   console.log(addtocart);
 
    

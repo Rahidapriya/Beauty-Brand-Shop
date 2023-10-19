@@ -18,6 +18,8 @@ const [upselectedOption, upsetSelectedOption] = useState(product.selectedOption)
     };
     const handleUpdateProduct=event=>{
       // const type = selectedOption;
+      console.log('gghhhh_',_id);
+      
       event.preventDefault()
     const form = event.target;
     const photo = form.photo.value;
@@ -26,7 +28,7 @@ const [upselectedOption, upsetSelectedOption] = useState(product.selectedOption)
     const rating = form.rating.value;
     const desp = form.desp.value;
   
-    const updatedProduct = { selectedOption,brand_name, name, price, rating, desp, photo };
+    const updatedProduct = { selectedOption,brandselectedOption, name, price, rating, desp, photo };
     console.log(updatedProduct);
   
      

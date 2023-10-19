@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const MyCartCard = ({myCart,myCarts,setMyCarts}) => {
     const {_id, brand_name,name, price, rating, desp, photo }=myCart;
+  
     // delete
     const handleDelete = _id =>{
         console.log("deleteid:",_id);

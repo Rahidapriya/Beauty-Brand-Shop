@@ -21,6 +21,7 @@ import AllProduct from "../../pages/allproduct/AllProduct";
 import UpdateProduct from "../../pages/updateProduct/UpdateProduct";
 import DetailsProduct from "../../pages/detailsProduct/DetailsProduct";
 import MyCart from "../../pages/mycart/MyCart";
+
 // import ErrorPage from "../../pages/errorPage/ErrorPage";
 
   const router = createBrowserRouter([
@@ -41,23 +42,23 @@ import MyCart from "../../pages/mycart/MyCart";
           },
           
        
+      //  {
+      //   path:'/allproduct',
+      //   element:<AllProduct></AllProduct>,
+      //   loader:()=>fetch('http://localhost:5003/products')
+      //  },
        {
-        path:'/allproduct',
-        element:<AllProduct></AllProduct>,
-        loader:()=>fetch('http://localhost:5003/products')
+path:'/allproduct/:brand_name',
+element:<AllProduct></AllProduct>,
+loader:({params})=>fetch(`http://localhost:5003/productsbybrand/${params.brand_name}`)
        },
        {
-// path:'/allproduct/:brand_name',
-// element:<AllProduct></AllProduct>,
-// loader:({params})=>fetch(`http://localhost:5003/products/${params.brand_name}`)
-       },
-       {
-        path:'/allproduct/updateproduct/:id',
+        path:'/updateproduct/:id',
         element:<UpdateProduct></UpdateProduct>,
         loader:({params})=>fetch(`http://localhost:5003/products/${params.id}`)
       },
       {
-        path:'/allproduct/detailsproduct/:id',
+        path:'/detailsproduct/:id',
         element:<DetailsProduct></DetailsProduct>,
         loader:({params})=>fetch(`http://localhost:5003/products/${params.id}`)
       },

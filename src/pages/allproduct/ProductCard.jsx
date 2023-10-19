@@ -59,8 +59,8 @@ const ProductCard = ({product}) => {
           ></path>
         </svg>
       </button> */}
-     <Link to={`detailsproduct/${_id}`}><button className="btn mx-5 ">Details</button></Link> 
-      <Link to={`updateproduct/${_id}`}><button className="btn mx-5 ">Update</button></Link>
+     <Link to={`../detailsproduct/${_id}`}><button className="btn mx-5 ">Details</button></Link> 
+      <Link to={`../updateproduct/${_id}`}><button className="btn mx-5 ">Update</button></Link>
     </div>
   </div>
 </div>

@@ -1,10 +1,14 @@
 
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 import ProductCard from './ProductCard';
 import Navbar from '../../shared/navbar/Navbar';
  
  const AllProduct = () => {
-    const products = useLoaderData()
+    const products = useLoaderData();
+    const { brand_name } = useParams();
+    // const filteredProducts = products.filter((product) => product.brand_name === brand_name);
+    // console.log(filteredProducts);
+
     return (
         <div>
             <Navbar></Navbar>
@@ -14,6 +18,10 @@ import Navbar from '../../shared/navbar/Navbar';
            {
             products.map(product=><ProductCard key={product._id} product={product}></ProductCard>)
            }
+
+{/* {filteredProducts.map((product) => (
+          <ProductCard key={product._id} product={product} />
+        ))} */}
             </div>
         </div>
     );
