@@ -9,8 +9,8 @@ const ProductCard = ({product}) => {
     return (
       <div>
       
-             <div className="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-  <div className="relative w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
+             <div className="relative flex flex-col lg:flex-row w-full max-w-[48rem]  rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+  <div className="relative lg:w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
     <img
      src={photo}
       alt="image"
@@ -59,8 +59,10 @@ const ProductCard = ({product}) => {
           ></path>
         </svg>
       </button> */}
-     <Link to={`../detailsproduct/${_id}`}><button className="btn mx-5 ">Details</button></Link> 
+    <div className="flex lg:flex-none">
+    <Link to={`../detailsproduct/${_id}`}><button className="btn mx-5 ">Details</button></Link> 
       <Link to={`../updateproduct/${_id}`}><button className="btn mx-5 ">Update</button></Link>
+    </div>
     </div>
   </div>
 </div>

@@ -44,7 +44,7 @@ const DetailsProduct = () => {
     return (
        <div>
         <Navbar></Navbar>
-         <div className='flex flex-col lg:flex-row justify-around items-center mt-16'>
+         <div className='flex flex-col lg:flex-row justify-around items-center my-16'>
             <img src={cart} className='w-300 hidden lg:flex' alt="" />
             <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
   <div className="relative mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
