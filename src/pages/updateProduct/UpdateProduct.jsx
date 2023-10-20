@@ -32,7 +32,7 @@ const [upselectedOption, upsetSelectedOption] = useState(product.selectedOption)
     console.log(updatedProduct);
   
      
-      fetch(`http://localhost:5003/products/${_id}`,{
+      fetch(`https://brand-shop-server-4mhtjjmoc-rahidapriyas-projects.vercel.app/products/${_id}`,{
           method:'PUT',
           headers:{
               'content-type':'application/json'

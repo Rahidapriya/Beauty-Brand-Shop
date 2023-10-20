@@ -5,7 +5,7 @@ const Contact = () => {
     return (
         <div>
            
-{/* <div className="container my-24 mx-auto md:px-6 text-black">
+<div className="container my-24 mx-auto md:px-6 text-black">
   
   <section className="mb-32">
     <div
@@ -94,7 +94,7 @@ const Contact = () => {
     </div>
   </section>
 
-</div> */}
+</div>
 
         </div>
     );

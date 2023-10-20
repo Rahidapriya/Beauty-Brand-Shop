@@ -15,7 +15,7 @@ const DetailsProduct = () => {
   console.log(addtocart);
 
    
-  fetch(`http://localhost:5003/addtocart`,{
+  fetch(`https://brand-shop-server-4mhtjjmoc-rahidapriyas-projects.vercel.app/addtocart`,{
     method:'POST',
     headers:{
         'content-type':'application/json'

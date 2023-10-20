@@ -23,7 +23,7 @@ const MyCartCard = ({myCart,myCarts,setMyCarts}) => {
             if (result.isConfirmed) {
           
             console.log('delete confirm');
-            fetch(`http://localhost:5003/addtocart/${_id}`,{
+            fetch(`https://brand-shop-server-4mhtjjmoc-rahidapriyas-projects.vercel.app/addtocart/${_id}`,{
                 method:'DELETE'
                 
             })

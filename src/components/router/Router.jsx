@@ -33,7 +33,7 @@ import MyCart from "../../pages/mycart/MyCart";
         {
           path:'/',
           element:<Home></Home>,
-          loader:()=>fetch('http://localhost:5003/brandcard')
+          loader:()=>fetch('https://brand-shop-server-4mhtjjmoc-rahidapriyas-projects.vercel.app/brandcard')
         },
       
         {
@@ -45,27 +45,27 @@ import MyCart from "../../pages/mycart/MyCart";
       //  {
       //   path:'/allproduct',
       //   element:<AllProduct></AllProduct>,
-      //   loader:()=>fetch('http://localhost:5003/products')
+      //   loader:()=>fetch('https://brand-shop-server-4mhtjjmoc-rahidapriyas-projects.vercel.app/products')
       //  },
        {
 path:'/allproduct/:brand_name',
 element:<AllProduct></AllProduct>,
-loader:({params})=>fetch(`http://localhost:5003/productsbybrand/${params.brand_name}`)
+loader:({params})=>fetch(`https://brand-shop-server-4mhtjjmoc-rahidapriyas-projects.vercel.app/productsbybrand/${params.brand_name}`)
        },
        {
         path:'/updateproduct/:id',
         element:<UpdateProduct></UpdateProduct>,
-        loader:({params})=>fetch(`http://localhost:5003/products/${params.id}`)
+        loader:({params})=>fetch(`https://brand-shop-server-4mhtjjmoc-rahidapriyas-projects.vercel.app/products/${params.id}`)
       },
       {
         path:'/detailsproduct/:id',
         element:<DetailsProduct></DetailsProduct>,
-        loader:({params})=>fetch(`http://localhost:5003/products/${params.id}`)
+        loader:({params})=>fetch(`https://brand-shop-server-4mhtjjmoc-rahidapriyas-projects.vercel.app/products/${params.id}`)
       },
       {
         path:'/mycart',
         element:<MyCart></MyCart>,
-        loader:()=>fetch(`http://localhost:5003/addtocart`)
+        loader:()=>fetch(`https://brand-shop-server-4mhtjjmoc-rahidapriyas-projects.vercel.app/addtocart`)
       },
         
         {
