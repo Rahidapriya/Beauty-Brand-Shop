@@ -12,7 +12,7 @@ const MyCart = () => {
      
     useEffect(()=>{
         user && user?.email &&
-         setFilteredProducts (loadedCart.filter((product) => product.userEmail === user.email));
+         setFilteredProducts (loadedCart.filter((product) => product.userEmail === user?.email));
     },[user])
     // console.log(loadedCart);
     // const {_id, selectedOption,brand_name, name, price, rating, desp, photo }=myCarts;

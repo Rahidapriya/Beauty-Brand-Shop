@@ -20,7 +20,7 @@ const ProductCard = ({product}) => {
   <div></div>
   <div className="p-6">
     <h6 className="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-pink-500 uppercase">
-     Product Name:{name}
+    {name}
     </h6>
     <h4 className="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
      Brand: {brand_name}
@@ -29,7 +29,7 @@ const ProductCard = ({product}) => {
       {selectedOption}
     </p>
     <p className="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
-      Price:{price}
+      Price:{price} $
     </p>
     <p className="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
       Rating:{rating}

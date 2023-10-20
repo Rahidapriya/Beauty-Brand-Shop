@@ -32,7 +32,7 @@ const AddProduct = () => {
   console.log(newProduct);
 
    
-    fetch('https://brand-shop-server-4mhtjjmoc-rahidapriyas-projects.vercel.app/products',{
+    fetch('https://brand-shop-server-kqrwaufgm-rahidapriyas-projects.vercel.app/products',{
         method:'POST',
         headers:{
             'content-type':'application/json'
@@ -358,7 +358,7 @@ const AddProduct = () => {
              Price
             </label>
             <input
-              type="text"
+              type='number'
               
               name="price"
               id="price"
@@ -379,7 +379,7 @@ const AddProduct = () => {
               Add Product Rating
             </label>
             <input
-              type="text"
+              type='number'
               name="rating"
               id="rating"
               placeholder="Rating"

@@ -8,14 +8,15 @@ const DetailsProduct = () => {
     const details=useLoaderData();
     const {user}=useContext(AuthContext);
     const {_id, selectedOption,brand_name, name, price, rating, desp, photo }=details;
-
+    // const { email } = user;
     // backend
+    // console.log(user.email);
     const handleAddToCart=()=>{
-    const addtocart = { userEmail:user.email,selectedOption,brand_name, name, price, rating, desp, photo };
+    const addtocart = { userEmail:user?.email,selectedOption,brand_name, name, price, rating, desp, photo };
   console.log(addtocart);
 
    
-  fetch(`https://brand-shop-server-4mhtjjmoc-rahidapriyas-projects.vercel.app/addtocart`,{
+  fetch(`https://brand-shop-server-kqrwaufgm-rahidapriyas-projects.vercel.app/addtocart`,{
     method:'POST',
     headers:{
         'content-type':'application/json'
