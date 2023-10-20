@@ -11,9 +11,9 @@ import { useEffect } from 'react';
   
 
 const About = () => {
-  useEffect(()=>{
-    AOS.init({duration:'1000'})
-  })
+  // useEffect(()=>{
+  //   AOS.init({duration:'1000'})
+  // })
     return (
         <div>
          
@@ -26,8 +26,10 @@ const About = () => {
 
            <div className="hero min-h-screen bg-base-100">
   <div className="hero-content flex-col lg:flex-row-reverse">
-    <img src={hero} className=" rounded-lg lg:w-5/12 shadow-2xl" data-aos="fade-up" />
-    <div data-aos="fade-right">
+    {/* // data-aos="fade-up" */}
+    <img src={hero} className=" rounded-lg lg:w-5/12 shadow-2xl" />
+    <div >
+      {/* data-aos="fade-right" */}
       <h1 className=" text-3xl  md:text-5xl lg:text-5xl font-bold text-amber-500 md:text-center lg:text-left ">Crafting Unforgettable Experiences</h1>
       <p className="py-6" >
 

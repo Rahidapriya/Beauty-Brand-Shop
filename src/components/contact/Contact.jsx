@@ -4,7 +4,10 @@
 const Contact = () => {
     return (
         <div>
-           
+            <div className='flex flex-col items-center justify-center mt-20 ' id='services'>
+             <h3 className='text-amber-500'> Reach us</h3>
+             <h1 className='text-purple-950 text-4xl font-metamorphous font-bold'>__Contact Us__</h1>
+            </div>
 <div className="container my-24 mx-auto md:px-6 text-black">
   
   <section className="mb-32">

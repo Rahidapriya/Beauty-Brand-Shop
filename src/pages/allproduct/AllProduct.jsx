@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import ProductCard from './ProductCard';
 import Navbar from '../../shared/navbar/Navbar';
 import AddSlider from './AddSlider';
+import Footer from '../../shared/footer/Footer';
 
 const AllProduct = () => {
   const products = useLoaderData();
@@ -17,7 +18,7 @@ const AllProduct = () => {
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
   <h2 className='text-center text-3xl font-bold'>No available products</h2>
 </div>
-
+<Footer></Footer>
       </div>
     );
   }
@@ -34,6 +35,7 @@ const AllProduct = () => {
         ))
     }
       </div>
+      <Footer></Footer>
     </div>
   );
 };

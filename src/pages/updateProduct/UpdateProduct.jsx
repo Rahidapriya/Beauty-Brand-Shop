@@ -1,5 +1,5 @@
 import {  useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Navigate, useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import Navbar from "../../shared/navbar/Navbar";
 
@@ -7,6 +7,7 @@ import Navbar from "../../shared/navbar/Navbar";
 const UpdateProduct = () => {
    
     const product=useLoaderData();
+    const navigate=useNavigate();
 const { _id,selectedOption,brand_name, name, price, rating, desp, photo }=product;
 const [brandselectedOption, setBrandSelectedOption] = useState(product.brand_name);
     const  handleBrandRadioChange = (e) => {
@@ -49,6 +50,8 @@ const [upselectedOption, upsetSelectedOption] = useState(product.selectedOption)
                   icon: 'success',
                   confirmButtonText: 'Cool'
                 })
+                // navigate('/'); 
+                navigate('/'); 
           }
          })
   

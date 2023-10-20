@@ -21,6 +21,7 @@ import AllProduct from "../../pages/allproduct/AllProduct";
 import UpdateProduct from "../../pages/updateProduct/UpdateProduct";
 import DetailsProduct from "../../pages/detailsProduct/DetailsProduct";
 import MyCart from "../../pages/mycart/MyCart";
+import PrivateRoute from "./PrivateRoute";
 
 // import ErrorPage from "../../pages/errorPage/ErrorPage";
 
@@ -38,7 +39,7 @@ import MyCart from "../../pages/mycart/MyCart";
       
         {
             path:"/addproduct",
-            element:<AddProduct></AddProduct>
+            element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
           },
           
        
@@ -54,17 +55,17 @@ loader:({params})=>fetch(`https://brand-shop-server-kqrwaufgm-rahidapriyas-proje
        },
        {
         path:'/updateproduct/:id',
-        element:<UpdateProduct></UpdateProduct>,
+        element:<PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
         loader:({params})=>fetch(`https://brand-shop-server-kqrwaufgm-rahidapriyas-projects.vercel.app/products/${params.id}`)
       },
       {
         path:'/detailsproduct/:id',
-        element:<DetailsProduct></DetailsProduct>,
+        element:<PrivateRoute><DetailsProduct></DetailsProduct></PrivateRoute>,
         loader:({params})=>fetch(`https://brand-shop-server-kqrwaufgm-rahidapriyas-projects.vercel.app/products/${params.id}`)
       },
       {
         path:'/mycart',
-        element:<MyCart></MyCart>,
+        element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
         loader:()=>fetch(`https://brand-shop-server-kqrwaufgm-rahidapriyas-projects.vercel.app/addtocart`)
       },
         
