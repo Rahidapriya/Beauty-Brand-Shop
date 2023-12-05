@@ -34,7 +34,7 @@ import PrivateRoute from "./PrivateRoute";
         {
           path:'/',
           element:<Home></Home>,
-          loader:()=>fetch('https://brand-shop-server-kqrwaufgm-rahidapriyas-projects.vercel.app/brandcard')
+          loader:()=>fetch('https://brand-shop-server-swart-omega.vercel.app/brandcard')
         },
       
         {
@@ -43,30 +43,25 @@ import PrivateRoute from "./PrivateRoute";
           },
           
        
-      //  {
-      //   path:'/allproduct',
-      //   element:<AllProduct></AllProduct>,
-      //   loader:()=>fetch('https://brand-shop-server-4mhtjjmoc-rahidapriyas-projects.vercel.app/products')
-      //  },
-       {
+  {
 path:'/allproduct/:brand_name',
 element:<AllProduct></AllProduct>,
-loader:({params})=>fetch(`https://brand-shop-server-kqrwaufgm-rahidapriyas-projects.vercel.app/productsbybrand/${params.brand_name}`)
+loader:({params})=>fetch(`https://brand-shop-server-swart-omega.vercel.app/productsbybrand/${params.brand_name}`)
        },
        {
         path:'/updateproduct/:id',
         element:<PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-        loader:({params})=>fetch(`https://brand-shop-server-kqrwaufgm-rahidapriyas-projects.vercel.app/products/${params.id}`)
+        loader:({params})=>fetch(`https://brand-shop-server-swart-omega.vercel.app/products/${params.id}`)
       },
       {
         path:'/detailsproduct/:id',
         element:<PrivateRoute><DetailsProduct></DetailsProduct></PrivateRoute>,
-        loader:({params})=>fetch(`https://brand-shop-server-kqrwaufgm-rahidapriyas-projects.vercel.app/products/${params.id}`)
+        loader:({params})=>fetch(`https://brand-shop-server-swart-omega.vercel.app/products/${params.id}`)
       },
       {
         path:'/mycart',
         element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader:()=>fetch(`https://brand-shop-server-kqrwaufgm-rahidapriyas-projects.vercel.app/addtocart`)
+        loader:()=>fetch(`https://brand-shop-server-swart-omega.vercel.app/addtocart`)
       },
         
         {

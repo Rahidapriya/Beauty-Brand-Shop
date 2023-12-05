@@ -1,27 +1,29 @@
-
-
-# Project Name: Glamer Fixx #
-## Project Category :Cosmetics and Beauty ##
+# Beauty Brand Shop #
 ## Project Features ##
 
-  * Users can register on the website and log in via email or Google.
+  * **User Authentication:**
+    * Users can register on the website and log in via email or Google.
+    * Users cannot access most of the private sections (such as Details, Update, and Add products) without first logging in to the website.
+    * Users can view login error and success alerts using toasts and SweetAlert.
+    * Users can toggle between the login and registration pages.
+    * Users are required to use passwords that contain at least one uppercase letter, one special character, and have a minimum length of 6 characters.
 
-  * Users cannot access most of the private sections (such as Details, Update, and Add products) without   first logging in to the website.
+  * **Product Management:**
+    * Users can see specific brand products by clicking on the brand card.
+    * Users can add products to the cart.
+    * Each user has a personalized "My Cart" page.
+    * Users can add and update products.
 
-  * Users can view login error and success alerts using toasts and SweetAlert.
+## Tech Stack
+### Frontend
+- Developed using React and Vite for a fast and reactive user interface.
+### Styling
+- Tailwind CSS for utility-first styling.
+- Vanilla CSS for custom styling.
+### Backend
+- MongoDB for storing and managing data.
+- Firebase for secure user authentication.
 
-  * Users can toggle between the login and registration pages.
-
-  * Users are required to use passwords that contain at least one uppercase letter, one special character, and have a minimum length of 6 characters.
-
-  * User can see specific brand products by clicking on brand card.
-
-  * User can do add to cart .
-
-  * Every user have different "my cart" page.
-
-  * User can add and update products.
-
-  
- - Live Link : [Click Here](https://brand-shop-a10.web.app/) 
-
+## Live Links
+- [Project Live Site Link](https://brand-shop-a10.web.app/)
+- [Server Site GitHub Repository](https://github.com/Rahidapriya/Beauty-Brand-Shop-Server-Site)

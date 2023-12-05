@@ -3,13 +3,13 @@ import cart from '../../assets/attocart.png'
 import Swal from 'sweetalert2';
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
-import Footer from '../../shared/footer/Footer';
+
 import Navbar from '../../shared/navbar/Navbar';
 
 const DetailsProduct = () => {
     const details=useLoaderData();
     const {user}=useContext(AuthContext);
-    const {_id, selectedOption,brand_name, name, price, rating, desp, photo }=details;
+    const { selectedOption,brand_name, name, price, rating, desp, photo }=details;
     // const { email } = user;
     // backend
     // console.log(user.email);
@@ -18,7 +18,7 @@ const DetailsProduct = () => {
   console.log(addtocart);
 
    
-  fetch(`https://brand-shop-server-kqrwaufgm-rahidapriyas-projects.vercel.app/addtocart`,{
+  fetch(`https://brand-shop-server-swart-omega.vercel.app/addtocart`,{credentials:'include'},{
     method:'POST',
     headers:{
         'content-type':'application/json'

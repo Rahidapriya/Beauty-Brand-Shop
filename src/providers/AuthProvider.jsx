@@ -4,6 +4,7 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged,
 import { createContext, useEffect, useState } from "react";
 import { getAuth } from "firebase/auth";
 import app from '../components/firebase/firebase.config'
+import axios from "axios";
 const auth = getAuth(app);
 const googleProvider=new GoogleAuthProvider()
 export const AuthContext = createContext(null);
@@ -18,20 +19,6 @@ const AuthProvider = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
-
-// const profileInfo=(name,photo)=>{
-//     setLoding(true)
-//    return updateProfile(auth.currentUser,
-
-//      { 
-//         displayName: name,
-//          photoURL: photo ,
-         
-//         }
-       
-//         )
-      
-// }
 
 const profileInfo = (name, photo) => {
     setLoding(true);
@@ -54,40 +41,6 @@ const profileInfo = (name, photo) => {
     });
 }
 
-
-
-
-
-
-
-
-
-
-
-
-    // const createUser = (auth, email, password, name, photo) => {
-    //     setLoding(true);
-    //     return createUserWithEmailAndPassword(auth, email, password)
-    //       .then((user) => {
-    //         // Update user profile with name and photo
-    //         return updateProfile(user, { displayName: name, photoURL: photo })
-    //           .then(() => {
-    //             setUser(user);
-    //             setLoding(false);
-    //             return user;
-    //           })
-    //           .catch((error) => {
-    //             console.error(error);
-    //             // setLoding(false);
-    //             throw error;
-    //           });
-    //       })
-    //       .catch((error) => {
-    //         console.error(error);
-    //         // setLoding(false);
-    //         throw error;
-    //       });
-    //   };
       
       
       console.log('current user',user);
@@ -114,7 +67,21 @@ const googleSignIn=(value)=>{
             setUser(currentUser);
             setLoding(false);
 
-
+const userEmail=currentUser?.email || user?.email;
+const loggedUser={email:userEmail};
+if(currentUser){
+   
+    axios.post('https://brand-shop-server-swart-omega.vercel.app/jwt',loggedUser,{withCredentials:true})
+    .then(res=>{
+        console.log('token response',res.data);
+    })
+}
+else{
+    axios.post('https://brand-shop-server-swart-omega.vercel.app/logout',loggedUser,{withCredentials:true})
+    .then(res=>{
+        console.log(res.data);
+    })
+}
            
 
 

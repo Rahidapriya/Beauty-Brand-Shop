@@ -3,7 +3,7 @@ import MyCartCard from "./MyCartCard";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Navbar from "../../shared/navbar/Navbar";
-import Footer from "../../shared/footer/Footer";
+
 
 const MyCart = () => {
   const { user } = useContext(AuthContext);

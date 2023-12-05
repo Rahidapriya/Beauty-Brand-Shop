@@ -32,7 +32,7 @@ const AddProduct = () => {
   console.log(newProduct);
 
    
-    fetch('https://brand-shop-server-kqrwaufgm-rahidapriyas-projects.vercel.app/products',{
+    fetch('https://brand-shop-server-swart-omega.vercel.app/products',{
         method:'POST',
         headers:{
             'content-type':'application/json'
