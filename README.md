@@ -1,4 +1,8 @@
 # Beauty Brand Shop #
+## Project Overview ##
+
+The Beauty Brand Shop Website is an innovative e-commerce platform designed to provide users with a seamless and delightful shopping experience for a wide range of beauty products from diverse brands. This project aims to create a user-friendly and visually appealing online destination that caters to the beauty needs of customers by offering an extensive selection of products.
+
 ## Project Features ##
 
   * **User Authentication:**
